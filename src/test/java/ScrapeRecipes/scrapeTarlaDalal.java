@@ -43,6 +43,7 @@ public class scrapeTarlaDalal {
 	static String morbidCondn = "", rcp_category = ""; 
     String page_index;	
 	String[] recipe_category = {"breakfast","lunch","dinner","snack"};
+	
 	Instant timer_start, timer_end;
     
 	
@@ -78,6 +79,19 @@ public class scrapeTarlaDalal {
 		XSSFSheet newsheet = workbook.cloneSheet(0,"Diabetes_recipes");
 	    newsheet = workbook.cloneSheet(0,"Hypertension_recipes");
 		newsheet = workbook.cloneSheet(0,"Hypothyroidism_recipes");
+		XSSFSheet newsheet1 = workbook.createSheet("Allergy_info");
+		Row row1 = newsheet1.createRow(0);
+		
+		row1.createCell(0).setCellValue("Morbid Condition");
+		row1.createCell(1).setCellValue("Allergy Information");
+		row1.createCell(2).setCellValue("Recipe Name");
+		row1.createCell(3).setCellValue("Recipe URL");
+		
+		for(int j = 0; j<=3; j++)
+		{
+		 row1.getCell(j).setCellStyle(style);
+			
+		}
 		
        	File excelFile = new File(path+"ScrappedRecipes.xlsx");
 		FileOutputStream fos = new FileOutputStream(excelFile);
@@ -147,7 +161,7 @@ public class scrapeTarlaDalal {
 		driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		createExcel();
+    	//createExcel();
 	}
 	
 	@Test(priority = 1)
@@ -227,10 +241,11 @@ public class scrapeTarlaDalal {
 		timer_start = Instant.now();
 		int eliminated_recipe_count =  0, filtered_recipe_count = 0;
 		int total_recipes = 0, tohave_count = 0;;
+		
 		readExcel(morbidCondn+"_eliminatedlist");
 		readExcel("allergies");
 		readExcel(morbidCondn+"_toadd");
-		
+		//driver.get("https://tarladalal.com/recipes-for-indian-diabetic-recipes-370?pageindex=13");
 			
     	List <WebElement> recipe_link_pages = driver.findElements(By.xpath("//a[@class='respglink']"));
     	int num =recipe_link_pages.size();
@@ -240,7 +255,7 @@ public class scrapeTarlaDalal {
 
 		//total_pages
 		//traversing thru recipe pages
-		for(int i=1;i<=1;i++)
+		for(int i=1;i<=total_pages;i++)
 		{
 			driver.findElement(By.xpath("//a[@href='/"+page_index+"?pageindex="+i+"']")).click();
 			String current_url = driver.getCurrentUrl();
@@ -272,10 +287,7 @@ public class scrapeTarlaDalal {
               catch(UnhandledAlertException e)
               {
             	  e.printStackTrace();
-          		  Alert alert = driver.switchTo().alert();
-          		  alert.dismiss();
-                  ingredientsList = driver.findElement(By.xpath("//div[@id='rcpinglist']")).getText();
-
+          		  continue for_loop;
           	  }
               flag = 0;
               outer:
@@ -426,6 +438,15 @@ public class scrapeTarlaDalal {
     			if(allergyFlag == 1)
         		{   
         			row.createCell(10).setCellValue(allergy_name);
+        			XSSFSheet worksheet1 = workbook.getSheet("Allergy_info");
+        			int rowCount1 = worksheet1.getLastRowNum();
+              		
+              		Row row1 = worksheet1.createRow(++rowCount1);
+            	
+            		row1.createCell(0).setCellValue(morbidCondn);
+              		row1.createCell(1).setCellValue(allergy_name);
+            		row1.createCell(2).setCellValue(recipe_name);
+            		row1.createCell(3).setCellValue(recipe_url);
         			allergyFlag = 0;
         		}
         		else 

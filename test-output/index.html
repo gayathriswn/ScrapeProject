@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\gayat\AppData\Local\Temp\testng-eclipse--1661426618\testng-customsuite.xml</span>
+                    <span>C:\Users\gayat\AppData\Local\Temp\testng-eclipse--544458909\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,21 +104,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="ScrapeRecipes.scrapeTarlaDalal" class="method navigator-link" hash-for-method="search_for_recipes_diabetes">search_for_recipes_diabetes</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ScrapeRecipes.scrapeTarlaDalal" class="method navigator-link" hash-for-method="search_for_recipes_hypertension">search_for_recipes_hypertension</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ScrapeRecipes.scrapeTarlaDalal" class="method navigator-link" hash-for-method="search_for_recipes_hypothyroidism">search_for_recipes_hypothyroidism</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="ScrapeRecipes.scrapeTarlaDalal" class="method navigator-link" hash-for-method="search_for_recipes_pcos">search_for_recipes_pcos</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -146,33 +131,12 @@
                   <span class="method-name">search_for_recipes_diabetes</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="search_for_recipes_hypertension">
-                  </a> <!-- search_for_recipes_hypertension -->
-                  <span class="method-name">search_for_recipes_hypertension</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="search_for_recipes_hypothyroidism">
-                  </a> <!-- search_for_recipes_hypothyroidism -->
-                  <span class="method-name">search_for_recipes_hypothyroidism</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="search_for_recipes_pcos">
-                  </a> <!-- search_for_recipes_pcos -->
-                  <span class="method-name">search_for_recipes_pcos</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\gayat\AppData\Local\Temp\testng-eclipse--1661426618\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\gayat\AppData\Local\Temp\testng-eclipse--544458909\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -181,7 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;ScrapeRecipes.scrapeTarlaDalal&quot;/&gt;
+      &lt;class name=&quot;ScrapeRecipes.scrapeTarlaDalal&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;search_for_recipes_diabetes&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- ScrapeRecipes.scrapeTarlaDalal --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -221,28 +189,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'search_for_recipes_pcos')
+data.setCell(0, 1, 'search_for_recipes_diabetes')
 data.setCell(0, 2, 'ScrapeRecipes.scrapeTarlaDalal')
-data.setCell(0, 3, 386270);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'search_for_recipes_diabetes')
-data.setCell(1, 2, 'ScrapeRecipes.scrapeTarlaDalal')
-data.setCell(1, 3, 386234);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'search_for_recipes_hypertension')
-data.setCell(2, 2, 'ScrapeRecipes.scrapeTarlaDalal')
-data.setCell(2, 3, 377745);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'search_for_recipes_hypothyroidism')
-data.setCell(3, 2, 'ScrapeRecipes.scrapeTarlaDalal')
-data.setCell(3, 3, 370372);
+data.setCell(0, 3, 6259395);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 25 minutes</span>
+              <span class="suite-total-time">Total running time: 1 hours</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -257,9 +213,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">ScrapeRecipes.scrapeTarlaDalal</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">search_for_recipes_hypertension</span>
+                <br/>
+                <span class="ignored-method-name">search_for_recipes_pcos</span>
+                <br/>
+                <span class="ignored-method-name">search_for_recipes_hypothyroidism</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -274,20 +241,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">search_for_recipes_pcos</span>
-                <span class="method-start">7498 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">search_for_recipes_hypothyroidism</span>
-                <span class="method-start">393777 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">search_for_recipes_hypertension</span>
-                <span class="method-start">764154 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">search_for_recipes_diabetes</span>
-                <span class="method-start">1141901 ms</span>
+                <span class="method-start">5289 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
