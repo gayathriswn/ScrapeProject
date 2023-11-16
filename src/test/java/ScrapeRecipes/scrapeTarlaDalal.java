@@ -26,6 +26,7 @@ import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -33,6 +34,7 @@ import org.testng.annotations.Test;
 public class scrapeTarlaDalal {
 		
 	public static WebDriver driver;
+	public static ChromeOptions options;
 	String url = "https://tarladalal.com/";
 	static int flag, allergyFlag = 0, toAddflag = 0,rcp_flag=0;
 	static String path  = System.getProperty("user.dir") + 
@@ -157,13 +159,19 @@ public class scrapeTarlaDalal {
     @BeforeTest
 	public void lauch_website() throws IOException
 	{
-		driver = new ChromeDriver();
-		driver.get(url);
+	
+		//options = new ChromeOptions();
+    	//options.addArguments("--headless");
+    	//driver = new ChromeDriver(options);
+	    driver = new ChromeDriver();
+    	driver.get(url);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    	//createExcel();
+    	createExcel();
+    	
 	}
-	
+    
+ 
 	@Test(priority = 1)
 	public void search_for_recipes_pcos() throws InterruptedException, IOException
 	{
@@ -245,8 +253,8 @@ public class scrapeTarlaDalal {
 		readExcel(morbidCondn+"_eliminatedlist");
 		readExcel("allergies");
 		readExcel(morbidCondn+"_toadd");
-		//driver.get("https://tarladalal.com/recipes-for-indian-diabetic-recipes-370?pageindex=13");
-			
+		
+		//checking total pages	
     	List <WebElement> recipe_link_pages = driver.findElements(By.xpath("//a[@class='respglink']"));
     	int num =recipe_link_pages.size();
     	String total_pages_to_scrape = recipe_link_pages.get(num-1).getText();
@@ -361,11 +369,8 @@ public class scrapeTarlaDalal {
                       }
                   }
             
-              	//writing data to excel file
             	String recipe_url = driver.getCurrentUrl();
             	String recipe_id = recipe_url.replaceAll("[^0-9]", "");
-            	//recipe_name
-            	//Ingredients_list
             	String prep_time = " ", cook_time = " ", nutrient_values = " ";
             	try
             	{
@@ -386,8 +391,10 @@ public class scrapeTarlaDalal {
             	{
             		e.printStackTrace();
             	} 
-               	String strFilePath  = System.getProperty("user.dir") + 
-                         				"/src/test/resources/TestData/ScrappedRecipes.xlsx";
+            	
+              	//writing data to excel file
+
+               	String strFilePath  = path+"ScrappedRecipes.xlsx";
             
             	File excelfile = new File(strFilePath);
             	FileInputStream fis = new FileInputStream(excelfile);	

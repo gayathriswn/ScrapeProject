@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-25T18:27:50 CDT" name="Default suite" finished-at="2023-04-25T20:12:15 CDT" duration-ms="6264726">
+  <suite started-at="2023-11-07T12:52:14 CST" name="Default suite" finished-at="2023-11-07T12:52:17 CST" duration-ms="2930">
     <groups>
     </groups>
-    <test started-at="2023-04-25T18:27:50 CDT" name="Default test" finished-at="2023-04-25T20:12:15 CDT" duration-ms="6264726">
-      <class name="ScrapeRecipes.scrapeTarlaDalal">
-        <test-method is-config="true" signature="lauch_website()[pri:0, instance:ScrapeRecipes.scrapeTarlaDalal@7c7b252e]" started-at="2023-04-25T18:27:50 CDT" name="lauch_website" finished-at="2023-04-25T18:27:55 CDT" duration-ms="5268" status="PASS">
+    <test started-at="2023-11-07T12:52:14 CST" name="Default test" finished-at="2023-11-07T12:52:17 CST" duration-ms="2930">
+      <class name="ScrapeProject.callDemoClass">
+        <test-method signature="test1()[pri:0, instance:ScrapeProject.callDemoClass@c1fca2a]" started-at="2023-11-07T12:52:15 CST" name="test1" finished-at="2023-11-07T12:52:16 CST" duration-ms="1216" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- lauch_website -->
-        <test-method signature="search_for_recipes_diabetes()[pri:4, instance:ScrapeRecipes.scrapeTarlaDalal@7c7b252e]" started-at="2023-04-25T18:27:55 CDT" name="search_for_recipes_diabetes" finished-at="2023-04-25T20:12:14 CDT" duration-ms="6259395" status="PASS">
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:ScrapeProject.callDemoClass@c1fca2a]" started-at="2023-11-07T12:52:16 CST" name="test2" finished-at="2023-11-07T12:52:17 CST" duration-ms="793" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- search_for_recipes_diabetes -->
-      </class> <!-- ScrapeRecipes.scrapeTarlaDalal -->
+        </test-method> <!-- test2 -->
+        <test-method signature="test3()[pri:0, instance:ScrapeProject.callDemoClass@c1fca2a]" started-at="2023-11-07T12:52:17 CST" name="test3" finished-at="2023-11-07T12:52:17 CST" duration-ms="847" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+      </class> <!-- ScrapeProject.callDemoClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
